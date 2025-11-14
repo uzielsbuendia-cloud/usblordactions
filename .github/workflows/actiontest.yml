@@ -12,7 +12,7 @@ jobs:
       - name: list files
         run: ls
       - name: checkout repo
-        uses: actions/checkout@v6-Beta
+        uses: actions/checkout@v5
       - name: ls
         run: ls
       - name: print to log test Actions USB
