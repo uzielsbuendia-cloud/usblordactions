@@ -1,0 +1,27 @@
+name: test actions 
+
+on:
+  push:
+  
+
+jobs:
+  test-actions:
+    name: test job actions
+    runs-on: ubuntu-latest
+    steps:
+      - name: list files
+        run: ls
+      - name: checkout repo
+        uses: actions/checkout@v6
+      - name: ls
+        run: ls
+      - name: print to log test Actions USB
+        id: print-to-log
+        uses: actions/hello-world-javascript-action@main
+        with:
+          who-to-greet: "USBLORD"
+      - name: timestamp  step
+        run: echo "'Greeting time :' ${{ steps.print-to-log.outputs.time }}"
+      - name: docker  action
+        uses: docker://hello-world:latest
+        
